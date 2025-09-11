@@ -1,32 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>User Profile Card</title>
-  <link rel="stylesheet" href="card.css">
+  <link rel="stylesheet" href="card.css" />
 </head>
 <body>
   <div class="card">
-    <h1>Profile</h1>
-    <table>
+    <h1 class="title">Profile</h1>
+
+    <table class="grid">
       <tr>
-        <td>
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvFRL5uq9iZfxe88BnMC1mpD7BWncwxcsCrw&s" 
-               class="avatar" alt="profile">
+        <td class="center" colspan="2">
+          <img class="avatar" src="https://i.pravatar.cc/240?img=12" alt="profile picture" />
         </td>
       </tr>
-      <tr><td class="login">Check</td></tr>
-      <tr><td class="desc">Web Developer</td></tr>
+      <tr><td class="center login" colspan="2">@student42</td></tr>
+      <tr><td class="center desc" colspan="2">Code Dreamer</td></tr>
+
       <tr>
-        <td class="socials">
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="facebook"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter"></a>
-          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram"></a>
+        <td class="center socials" colspan="2">
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733547.png" alt="facebook" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/733/733579.png" alt="twitter" /></a>
+          <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" alt="instagram" /></a>
         </td>
       </tr>
-      <tr><td><button>Contact</button></td></tr>
+
+      <tr>
+        <td class="center" colspan="2">
+          <button class="contact">Contact</button>
+        </td>
+      </tr>
     </table>
   </div>
 </body>
 </html>
-

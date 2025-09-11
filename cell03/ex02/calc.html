@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>It's over 9000</title>
+<style>
+  body{margin:0;height:100vh;display:grid;place-items:center;background:#f5f7fb;font-family:system-ui,Arial}
+  .calc{background:#fff;padding:22px 24px;border-radius:12px;box-shadow:0 8px 30px rgba(0,0,0,.08);display:flex;gap:10px;align-items:center}
+  input[type=text]{width:120px;padding:10px 12px;border:1px solid #d5d9e0;border-radius:8px;font-size:16px}
+  select, input[type=submit]{padding:10px 12px;border:1px solid #2c6cff;background:#2c6cff;color:#fff;border-radius:8px;font-size:16px;cursor:pointer}
+  select{background:#fff;color:#111;border-color:#d5d9e0}
+</style>
+</head>
+<body>
+  <form class="calc" onsubmit="return run(event)">
+    <input id="left"  type="text" placeholder="Left (0+)" inputmode="numeric" />
+    <select id="op">
+      <option>+</option><option>-</option><option>*</option><option>/</option><option>%</option>
+    </select>
+    <input id="right" type="text" placeholder="Right (0+)" inputmode="numeric" />
+    <input type="submit" value="Try me!" />
+  </form>
+
+<script>
+  // periodic nag
+  setInterval(()=>alert('Please, use me...'), 30000);
+
+  const isPosInt = s => /^[0-9]+$/.test(s); // only digits (>=0)
+
+  function run(e){
+    e.preventDefault();
+    const aStr = left.value.trim(), bStr = right.value.trim(), op = opEl.value;
+    if(!isPosInt(aStr) || !isPosInt(bStr)) return alert('Error :('), false;
+
+    const a = parseInt(aStr,10), b = parseInt(bStr,10);
+    if((op==='/' || op==='%') && b===0) { console.log("It's over 9000!"); alert("It's over 9000!"); return false; }
+
+    let res;
+    switch(op){
+      case '+': res = a + b; break;
+      case '-': res = a - b; break;
+      case '*': res = a * b; break;
+      case '/': res = Math.floor(a / b); break; // typical piscine expects integer division
+      case '%': res = a % b; break;
+    }
+    console.log(res);
+    alert(res);
+    return false;
+  }
+
+  // quick refs
+  const left = document.getElementById('left');
+  const right = document.getElementById('right');
+  const opEl = document.getElementById('op');
+</script>
+</body>
+</html>

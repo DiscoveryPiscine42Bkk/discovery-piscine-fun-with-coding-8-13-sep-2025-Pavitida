@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Change Background</title>
+  <link rel="stylesheet" href="backgroound.css">
+</head>
+<body>
+  <div class="container">
+    <button id="btn">Change Background</button>
+    <p id="color-code">Current: #f0f0f0</p>
+  </div>
+
+  <script>
+    const btn = document.getElementById("btn");
+    const code = document.getElementById("color-code");
+
+    btn.addEventListener("click", () => {
+      const randomColor = "#" + Math.floor(Math.random()*16777215).toString(16).padStart(6,"0");
+      document.body.style.background = randomColor;
+      code.textContent = "Current: " + randomColor;
+    });
+  </script>
+</body>
+</html>

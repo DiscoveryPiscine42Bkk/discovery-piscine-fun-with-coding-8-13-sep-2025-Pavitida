@@ -1,0 +1,11 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><title>Change Background (jQ)</title>
+<link rel="stylesheet" href="backgroound.css">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head><body>
+<button id="btn">Change Background</button>
+<script>
+setInterval(()=>alert('Please, use me...'),30000);
+$('#btn').on('click',()=>{const c='#'+Math.floor(Math.random()*16777215).toString(16).padStart(6,'0');$('body').css('background',c);console.log(c);alert(c);});
+</script>
+</body></html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html><html lang="en"><head>
+<meta charset="UTF-8"><title>It's over 9000 (jQ)</title>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<style>
+body{margin:0;height:100vh;display:flex;justify-content:center;align-items:center;background:#f6f8fb;font-family:sans-serif}
+.calc{background:#fff;padding:20px;border-radius:10px;box-shadow:0 6px 20px rgba(0,0,0,.08);display:flex;gap:10px}
+input[type=text],select{padding:8px 10px;border:1px solid #d5d9e0;border-radius:6px}
+input[type=submit]{padding:8px 14px;border:none;border-radius:6px;background:#2c6cff;color:#fff;cursor:pointer}
+</style></head><body>
+<form class="calc">
+  <input id="l" type="text" placeholder="0+">
+  <select id="op"><option>+</option><option>-</option><option>*</option><option>/</option><option>%</option></select>
+  <input id="r" type="text" placeholder="0+">
+  <input type="submit" value="Try me!">
+</form>
+<script>
+const isInt=s=>/^[0-9]+$/.test(s);
+setInterval(()=>alert('Please, use me...'),30000);
+$('.calc').on('submit',e=>{
+  e.preventDefault();
+  const a=$('#l').val().trim(),b=$('#r').val().trim(),o=$('#op').val();
+  if(!isInt(a)||!isInt(b)) return alert('Error :(');
+  const x=+a,y=+b;
+  if((o==='/'||o==='%')&&y===0) return console.log("It's over 9000!"),alert("It's over 9000!");
+  let r; switch(o){case '+':r=x+y;break;case '-':r=x-y;break;case '*':r=x*y;break;case '/':r=Math.floor(x/y);break;case '%':r=x%y;break;}
+  console.log(r); alert(r);
+});
+</script>
+</body></html>

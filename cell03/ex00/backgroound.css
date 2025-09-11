@@ -1,0 +1,32 @@
+body {
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-family:sans-serif;
+  background:#f0f0f0;
+}
+
+.container {
+  text-align:center;
+}
+
+button {
+  padding:12px 24px;
+  font-size:1.1em;
+  border:none;
+  border-radius:6px;
+  background:#007BFF;
+  color:#fff;
+  cursor:pointer;
+  transition:background .2s;
+}
+button:hover { background:#0056c7; }
+
+#color-code {
+  margin-top:12px;
+  font-size:1em;
+  color:#333;
+  font-weight:bold;
+}

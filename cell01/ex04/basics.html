@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Basics</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    :root {
+      --gap: clamp(20px, 6vw, 50px);
+      --tile-size: clamp(140px, 28vw, 300px);
+      --pink: #ffc3d6;
+      --ink: #111;
+      --ink-soft: #666;
+      --white: #fff;
+    }
+
+    html, body { height: 100%; margin: 0; }
+    body {
+      background: var(--pink);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: var(--ink);
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    header, main, footer { width: min(1100px, 92vw); margin: 0 auto; }
+
+    header { padding: clamp(16px, 4vw, 36px) 0; text-align: center; }
+    h1 {
+      margin: 0;
+      color: var(--white);
+      font-size: clamp(28px, 6vw, 56px);
+      letter-spacing: .5px;
+    }
+
+    .grid {
+      display: flex;
+      justify-content: center;
+      gap: var(--gap);
+      flex-wrap: wrap;
+      padding-bottom: clamp(16px, 4vw, 32px);
+    }
+
+    .tile {
+      width: var(--tile-size);
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: transform .12s ease, filter .12s ease;
+      will-change: transform;
+    }
+    .tile:focus-visible,
+    .tile:hover { transform: translateY(-2px); filter: saturate(1.05); }
+
+    figure { margin: 0; }
+    .logo {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      display: block;
+      border-radius: 16px;
+      background: rgba(255,255,255,.35);
+      box-shadow: 0 2px 0 rgba(0,0,0,.15) inset, 0 4px 18px rgba(0,0,0,.08);
+    }
+    figcaption {
+      margin-top: 10px;
+      font-size: clamp(16px, 2.6vw, 24px);
+      font-weight: 700;
+    }
+
+    hr {
+      border: none;
+      height: 2px;
+      background: var(--ink);
+      margin: clamp(12px, 3vw, 20px) 0;
+      width: min(1100px, 92vw);
+    }
+    footer {
+      margin-top: auto;
+      padding: 8px 0 clamp(16px, 4vw, 28px);
+      text-align: right;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-style: italic;
+      color: var(--ink-soft);
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>-so bigger!-</h1>
+  </header>
+
+  <main>
+    <section class="grid">
+      <a class="tile" href="https://shopee.co.th/m/avc-fsv-all-vouchers?uls_trackid=53l9qck702m1&utm_campaign=id_TyCIe1nl7M&utm_content=kfocus3----&utm_medium=affiliates&utm_source=an_15313950293&utm_term=dmt47he57jdh"
+         target="_blank" rel="noopener noreferrer">
+        <figure>
+          <img class="logo" src="https://www.leceipt.com/wp-content/uploads/2021/11/shopee-1.png" alt="Shopee logo" />
+          <figcaption>Shopee</figcaption>
+        </figure>
+      </a>
+
+      <a class="tile" href="https://www.lazada.co.th/shop/spigen-official-store/?gad_source=1&gclid=CjwKCAjw_fnFBhB0EiwAH_MfZkxpoy_7dk4sK9lfXzeKubXE082PyF17iUcO-HEF3BuWe_TqhUrWNRoC4YQQAvD_BwE&gad_campaignid=22317401991&path=promotion-436808-0.htm&tab=promotion&gbraid=0AAAAA-sSI74bH7yhJqOTAySXhm-xxdNm7"
+         target="_blank" rel="noopener noreferrer">
+        <figure>
+          <img class="logo" src="https://cdn-1.webcatalog.io/catalog/lazada/lazada-icon.png?v=1714774935368" alt="Lazada logo" />
+          <figcaption>Lazada</figcaption>
+        </figure>
+      </a>
+    </section>
+  </main>
+
+  <hr>
+
+  <footer>
+    © psonpong 2025
+  </footer>
+</body>
+</html>

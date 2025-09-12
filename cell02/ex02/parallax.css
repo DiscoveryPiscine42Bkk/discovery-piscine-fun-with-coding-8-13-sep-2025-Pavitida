@@ -3,7 +3,6 @@ html,body{margin:0}
 *{box-sizing:border-box}
 :root{--vh:100svh}
 
-/* parallax sections */
 .parallax{
   min-height:var(--vh);
   display:grid;
@@ -11,9 +10,9 @@ html,body{margin:0}
   text-align:center;
   color:#fff;
   position:relative;
-  isolation:isolate;            /* so overlay stays inside */
+  isolation:isolate;           
 }
-.parallax::before{              /* dark overlay for readability */
+.parallax::before{              
   content:"";
   position:absolute;inset:0;
   background:rgba(0,0,0,.35);
@@ -28,7 +27,7 @@ html,body{margin:0}
   background:url("https://images.unsplash.com/photo-1500534314209-a25ddb2bd429?q=80&w=1600&auto=format&fit=crop") center/cover fixed;
 }
 
-/* center text */
+
 h1{font:700 clamp(28px,6vw,64px)/1.05 system-ui,Arial,sans-serif;margin:0}
 .panel{
   min-height:50vh;
@@ -40,7 +39,7 @@ h1{font:700 clamp(28px,6vw,64px)/1.05 system-ui,Arial,sans-serif;margin:0}
 .panel h2{margin:.2em 0;font:700 clamp(22px,4vw,40px)/1.1 system-ui,Arial,sans-serif}
 .panel p{margin:0;font:400 clamp(14px,2.6vw,20px)/1.5 system-ui,Arial,sans-serif;opacity:.9}
 
-/* small fix for iOS that ignores background-attachment: fixed */
+
 @supports (-webkit-touch-callout:none){
   .hero,.finale{background-attachment:scroll}
 }

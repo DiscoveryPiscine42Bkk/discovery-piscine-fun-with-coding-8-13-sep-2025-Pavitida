@@ -1,35 +1,19 @@
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Mini Showcase</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  body{
-    margin:0;font-family:system-ui,sans-serif;
-    background:linear-gradient(135deg,#e0f2fe,#fce7f3);min-height:100vh;
-  }
-  body::before{
-    content:"";position:fixed;inset:0;
-    background:url('https://f.ptcdn.info/411/037/000/nxuk796auzIwwPeWW0i-o.jpg') center/cover no-repeat;
-    opacity:.15;z-index:-1;
-  }
+  body{background:linear-gradient(135deg,#e0f2fe,#fce7f3);min-height:100vh}
+  body::before{content:"";position:fixed;inset:0;background:url('https://f.ptcdn.info/411/037/000/nxuk796auzIwwPeWW0i-o.jpg') center/cover no-repeat;opacity:.15;z-index:-1}
 </style>
 </head>
 <body>
-
   <nav class="nav">
     <div class="brand">Our Portfolios</div>
-
-  
-    <input type="checkbox" id="nav-toggle">
-    <label for="nav-toggle" class="hamburger" aria-label="Menu">&#9776;</label>
-
-    <div class="links">
-      <a href="#choose">Home</a>
-      <a href="#about">About</a>
-    </div>
+    <input type="checkbox" id="nav-toggle"><label for="nav-toggle" class="hamburger" aria-label="Menu">&#9776;</label>
+    <div class="links"><a href="#choose">Home</a><a href="#about">About</a></div>
   </nav>
 
   <main>
@@ -48,15 +32,13 @@
     </section>
 
     <section id="about" class="section">
-      <div class="container card" style="padding:18px">
+      <div class="container card">
         <h2>About this rush</h2>
         <p>Three pages: landing + 2 CVs. Fixed navigation, responsive layout, clean sections.</p>
       </div>
     </section>
   </main>
 
-  <footer class="section" style="padding-top:0;text-align:center;color:#94a3b8">
-    © 2025 Discovery Piscine
-  </footer>
+  <footer class="section footer">© 2025 Discovery Piscine</footer>
 </body>
 </html>

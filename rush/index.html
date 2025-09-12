@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mini Showcase</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  body {
+    margin: 0;
+    font-family: system-ui, sans-serif;
+
+    background: linear-gradient(135deg,#e0f2fe,#fce7f3);
+    min-height: 100vh;
+  }
+
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: url('https://f.ptcdn.info/411/037/000/nxuk796auzIwwPeWW0i-o.jpg') center/cover no-repeat;
+    opacity: 0.15;      
+    z-index: -1;         
+  }
+</style>
+</head>
+<body>
+  <nav class="nav">
+    <div class="brand">Our Portfolios</div>
+    <div class="links"><a href="#choose">Home</a><a href="#about">About</a></div>
+  </nav>
+
+  <main>
+    <section id="choose" class="section">
+      <div class="container hero">
+        <div>
+          <h1>Choose a resume</h1>
+          <p>Pick whose portfolio to view.</p>
+          <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px">
+            <a class="btn" href="PAVITIDA.html">PAVITIDA</a>
+            <a class="btn" href="THATCHAWUT.html">THATCHAWUT</a>
+          </div>
+        </div>
+        <img class="resp" src="https://pbs.twimg.com/profile_images/1643953803161653260/ydEQ_7y4_400x400.jpg" alt="cover">
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container card" style="padding:18px">
+        <h2>About this rush</h2>
+        <p>Three pages: landing + 2 CVs. Fixed navigation, responsive layout, clean sections.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="section" style="padding-top:0;text-align:center;color:#94a3b8">
+    © 2025 Discovery Piscine
+  </footer>
+</body>
+</html>
+

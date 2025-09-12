@@ -1,45 +1,51 @@
-const BOX = document.getElementById('ft_list');
-const KEY = 'todos'; // cookie name
-
-// --- cookie helpers ---
-const setCookie = (k, v, days=365) => {
-  const d = new Date(Date.now() + days*864e5).toUTCString();
-  document.cookie = `${k}=${encodeURIComponent(v)}; expires=${d}; path=/`;
+// ---- cookie helpers ----
+const setCookie = (name, value, days = 365) => {
+  const expires = new Date(Date.now() + days*864e5).toUTCString();
+  document.cookie = `${name}=${encodeURIComponent(value)}; expires=${expires}; path=/`;
 };
-const getCookie = (k) =>
-  document.cookie.split('; ').find(x => x.startsWith(k+'='))?.split('=')[1] || '';
+const getCookie = (name) =>
+  document.cookie.split('; ').find(r => r.startsWith(name+'='))?.split('=')[1] || '';
 
-// --- state ---
+// ---- state ----
 let todos = [];
-const save = () => setCookie(KEY, JSON.stringify(todos));
-const render = () => {
-  BOX.innerHTML = '';
-  todos.forEach((t, i) => BOX.prepend(makeItem(t, i))); // newest on top
-};
-
-function makeItem(text, idx){
-  const d = document.createElement('div');
-  d.className = 'todo';
-  d.textContent = text;
-  d.title = 'Click to remove';
-  d.addEventListener('click', () => {
-    if (confirm(`Remove this TODO?\n\n${text}`)) {
-      todos.splice(idx, 1);
-      save(); render();
-    }
-  });
-  return d;
-}
+const list = document.getElementById('ft_list');
 
 // load from cookie
-try { todos = JSON.parse(decodeURIComponent(getCookie(KEY)) || '[]') || []; } catch { todos = []; }
-render();
+try { todos = JSON.parse(decodeURIComponent(getCookie('todos') || '[]')) || []; }
+catch { todos = []; }
 
-// New button
+// render all
+const render = () => {
+  list.innerHTML = '';
+  todos.forEach(t => list.prepend(makeItem(t))); // newest on top
+};
+
+const makeItem = (t) => {
+  const div = document.createElement('div');
+  div.className = 'todo';
+  div.textContent = t.text;
+  div.title = 'Click to remove';
+  div.addEventListener('click', () => {
+    if (confirm(`Remove this TO DO?\n\n${t.text}`)) {
+      todos = todos.filter(x => x.id !== t.id);
+      save();            // persist
+      div.remove();      // remove from DOM
+    }
+  });
+  return div;
+};
+
+const save = () => setCookie('todos', JSON.stringify(todos));
+
+// new button
 document.getElementById('new').addEventListener('click', () => {
-  const t = prompt('New TODO:');
-  if (t && t.trim()) {
-    todos.push(t.trim()); // add to end then render with prepend → shows on top
-    save(); render();
+  const text = prompt('New TO DO:');
+  if (text && text.trim()) {
+    const item = { id: Date.now(), text: text.trim() };
+    todos.push(item);
+    save();
+    list.prepend(makeItem(item)); // add to top
   }
 });
+
+render();

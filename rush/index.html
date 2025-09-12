@@ -6,28 +6,30 @@
 <title>Mini Showcase</title>
 <link rel="stylesheet" href="styles.css">
 <style>
-  body {
-    margin: 0;
-    font-family: system-ui, sans-serif;
-
-    background: linear-gradient(135deg,#e0f2fe,#fce7f3);
-    min-height: 100vh;
+  body{
+    margin:0;font-family:system-ui,sans-serif;
+    background:linear-gradient(135deg,#e0f2fe,#fce7f3);min-height:100vh;
   }
-
-  body::before {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: url('https://f.ptcdn.info/411/037/000/nxuk796auzIwwPeWW0i-o.jpg') center/cover no-repeat;
-    opacity: 0.15;      
-    z-index: -1;         
+  body::before{
+    content:"";position:fixed;inset:0;
+    background:url('https://f.ptcdn.info/411/037/000/nxuk796auzIwwPeWW0i-o.jpg') center/cover no-repeat;
+    opacity:.15;z-index:-1;
   }
 </style>
 </head>
 <body>
+
   <nav class="nav">
     <div class="brand">Our Portfolios</div>
-    <div class="links"><a href="#choose">Home</a><a href="#about">About</a></div>
+
+  
+    <input type="checkbox" id="nav-toggle">
+    <label for="nav-toggle" class="hamburger" aria-label="Menu">&#9776;</label>
+
+    <div class="links">
+      <a href="#choose">Home</a>
+      <a href="#about">About</a>
+    </div>
   </nav>
 
   <main>
@@ -58,4 +60,3 @@
   </footer>
 </body>
 </html>
-
